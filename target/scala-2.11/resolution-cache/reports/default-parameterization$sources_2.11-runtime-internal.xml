@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="parameterization$sources_2.11"
+		revision="1.0"
+		conf="runtime-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20171017103825"/>
+	<dependencies>
+		<module organisation="com.typesafe.scala-logging" name="scala-logging-slf4j_2.10">
+			<revision name="2.1.2" status="release" pubdate="20140425112000" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/scala-logging" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="6">
+				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3445" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe.scala-logging\scala-logging-slf4j_2.10\ivy-2.1.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/scala-logging/scala-logging-slf4j_2.10/2.1.2/scala-logging-slf4j_2.10-2.1.2.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-logging-slf4j_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="8794" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe.scala-logging\scala-logging-slf4j_2.10\srcs\scala-logging-slf4j_2.10-2.1.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging-slf4j_2.10/2.1.2/scala-logging-slf4j_2.10-2.1.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.11.5" status="release" pubdate="20150107003200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.5/" downloaded="false" searched="false" default="false" conf="compile, compile(*), runtime, runtime(*), master(compile), master" position="5">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2860" time="0" location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.11.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.5/scala-reflect-2.11.5.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.11.5/"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="560509" time="0" location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-reflect\srcs\scala-reflect-2.11.5-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.5/scala-reflect-2.11.5-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.scala-logging" name="scala-logging-api_2.10">
+			<revision name="2.1.2" status="release" pubdate="20140425112000" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/scala-logging" downloaded="false" searched="false" default="false" conf="compile, compile(*), runtime, runtime(*), master(compile), master" position="3">
+				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2616" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe.scala-logging\scala-logging-api_2.10\ivy-2.1.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/scala-logging/scala-logging-api_2.10/2.1.2/scala-logging-api_2.10-2.1.2.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-logging-api_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6232" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe.scala-logging\scala-logging-api_2.10\srcs\scala-logging-api_2.10-2.1.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging-api_2.10/2.1.2/scala-logging-api_2.10-2.1.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.7" status="release" pubdate="20140404121200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, compile(*), runtime, runtime(*), master(compile), master" position="2">
+				<metadata-artifact status="no" details="" size="4619" time="0" location="C:\Users\pietro.speri\.ivy2\cache\org.slf4j\slf4j-api\ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="49406" time="0" location="C:\Users\pietro.speri\.ivy2\cache\org.slf4j\slf4j-api\srcs\slf4j-api-1.7.7-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.10">
+			<revision name="2.3.16" status="release" pubdate="20161028170746" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2700" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe.akka\akka-actor_2.10\ivy-2.3.16.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.3.16/akka-actor_2.10-2.3.16.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.3.16" rev-constraint-default="2.3.16" rev-constraint-dynamic="2.3.16" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-actor_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="337395" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe.akka\akka-actor_2.10\srcs\akka-actor_2.10-2.3.16-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.10/2.3.16/akka-actor_2.10-2.3.16-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.2.1" status="release" pubdate="20140502155400" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, compile(*), runtime, runtime(*), master(compile), master" position="4">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2786" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe\config\ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="config" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="132611" time="0" location="C:\Users\pietro.speri\.ivy2\cache\com.typesafe\config\srcs\config-1.2.1-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/typesafe/config/1.2.1/config-1.2.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.5" status="release" pubdate="20150107003200" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.5/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, compile(*), runtime, runtime(*), master(compile), master" position="0">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2685" time="0" location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-library\ivy-2.11.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.11.5/scala-library-2.11.5.pom"/>
+				<caller organisation="default" name="parameterization$sources_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.11.5" rev-constraint-default="2.11.5" rev-constraint-dynamic="2.11.5" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.11.5/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="903802" time="0" location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-library\srcs\scala-library-2.11.5-sources.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.11.5/scala-library-2.11.5-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
