@@ -3,6 +3,7 @@ import com.typesafe.scalalogging.slf4j.LazyLogging
 /**
   * Created by Pietro.Speri on 17/10/2017.
   */
+
 object type_parameterization extends LazyLogging {
 
   def main(args: Array[String]): Unit ={
@@ -15,8 +16,7 @@ object type_parameterization extends LazyLogging {
   }
 
   logger.info("[LOWER BOUNDS]")
-  class Queue[+T] (private val leading: List[T],
-                   private val trailing: List[T] ) {
+  class Queue[+T] ( private val leading: List[T], private val trailing: List[T] ) {
     def enqueue[U >: T](x: U) =
       new Queue[U](leading, x :: trailing) // Type U is a superclass of the type T and is returning a type U
   }
