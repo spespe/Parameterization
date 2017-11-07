@@ -15,4 +15,5 @@ object fileMatcher {
   def fileContains(pattern:String)=fileMatching(_.contains(pattern))
 
   def fileRegex(pattern:String)=fileMatching(_.matches(pattern))
+
 }
