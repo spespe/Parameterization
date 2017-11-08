@@ -8,4 +8,13 @@ class Grep (fileName:String){
     println("Matches found: "+matches.size)
     matches.foreach(x=>println(x.trim))
   }
+
+  def checkFile(width:Int)={
+    def checkLines(line:String): Unit ={
+      if(line.length>width)
+        println(fileName+": "+line.trim)
+    }
+    val src = Source.fromFile(fileName)
+    for(line<-src.getLines) checkLines(line)
+  }
 }
