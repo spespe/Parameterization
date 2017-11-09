@@ -14,5 +14,11 @@ object CheckLines{
     for(line<-source.getLines)
       checkLine(line)
   }
+
+  def parseToArrayDouble(input:String):Array[Double]={
+    val splitted = input.split(",")
+    splitted.map(x=>x.toDouble)
+  }
+
 }
 
