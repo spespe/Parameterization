@@ -20,5 +20,10 @@ object CheckLines{
     splitted.map(x=>x.toDouble)
   }
 
+  def parseToTuple(input:String):(Int, Int, Double, Int)={
+    val splitted = input.split(",")
+    require(splitted.size==4)
+    (splitted(0).toInt, splitted(1).toInt, splitted(2).toDouble, splitted(3).toInt)
+  }
 }
 
