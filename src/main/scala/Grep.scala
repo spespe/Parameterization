@@ -4,7 +4,7 @@
 import scala.io.Source
 class Grep (fileName:String){
   def grep(pattern:String)={
-    val matches = Source.fromFile("").getLines.toList
+    val matches = Source.fromFile(fileName).getLines.toList
     println("Matches found: "+matches.size)
     matches.foreach(x=>println(x.trim))
   }
