@@ -4,7 +4,7 @@
 		module="parameterization$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20171017103825"
+		publication="20171110110430"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -38,6 +38,9 @@
 		</dependency>
 		<dependency org="com.typesafe.scala-logging" name="scala-logging-api_2.10" rev="2.1.2" transitive="false" conf="compile->compile,runtime,compile(*),runtime(*),master(compile),master;runtime->compile,runtime,compile(*),runtime(*),master(compile),master;test->compile,runtime,compile(*),runtime(*),master(compile),master;compile-internal->compile,runtime,compile(*),runtime(*),master(compile),master;runtime-internal->compile,runtime,compile(*),runtime(*),master(compile),master;test-internal->compile,runtime,compile(*),runtime(*),master(compile),master">
 			<artifact name="scala-logging-api_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-xml" rev="2.11.0-M4" transitive="false" conf="compile->default(compile),default,compile,runtime,master;runtime->default(compile),default,compile,runtime,master;test->default(compile),default,compile,runtime,master;compile-internal->default(compile),default,compile,runtime,master;runtime-internal->default(compile),default,compile,runtime,master;test-internal->default(compile),default,compile,runtime,master" info.apiURL="http://www.scala-lang.org/api/2.11.0-M4/">
+			<artifact name="scala-xml" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="com.typesafe" name="config" rev="1.2.1" transitive="false" conf="compile->compile,runtime,compile(*),runtime(*),master(compile),master;runtime->compile,runtime,compile(*),runtime(*),master(compile),master;test->compile,runtime,compile(*),runtime(*),master(compile),master;compile-internal->compile,runtime,compile(*),runtime(*),master(compile),master;runtime-internal->compile,runtime,compile(*),runtime(*),master(compile),master;test-internal->compile,runtime,compile(*),runtime(*),master(compile),master">
 			<artifact name="config" type="src" ext="jar" conf="sources" e:classifier="sources"/>

@@ -22,11 +22,21 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SBT: com.typesafe:config:1.2.1:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.7:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.11.5:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.11.5:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.typesafe.scala-logging:scala-logging-slf4j_2.10:2.1.2:jar" level="project" />
-    <orderEntry type="library" name="SBT: com.typesafe.scala-logging:scala-logging-api_2.10:2.1.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-xml:2.11.0-M4:jar" level="project" />
     <orderEntry type="library" name="SBT: com.typesafe.akka:akka-actor_2.10:2.3.16:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.scala-logging:scala-logging-api_2.10:2.1.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.scala-logging:scala-logging-slf4j_2.10:2.1.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.11.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.11.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.7:jar" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../sparkStreaming/out/artifacts/sparkstreaming_jar/sparkstreaming.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

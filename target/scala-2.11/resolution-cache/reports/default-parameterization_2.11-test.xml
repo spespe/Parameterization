@@ -7,8 +7,21 @@
 		revision="1.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20171017103824"/>
+		date="20171110105954"/>
 	<dependencies>
+		<module organisation="org.scala-lang" name="scala-xml">
+			<revision name="2.11.0-M4" status="release" pubdate="20130711012358" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.0-M4/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="7">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html
+         "/>
+				<metadata-artifact status="successful" details="" size="1876" time="18764" location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-xml\ivy-2.11.0-M4.xml" searched="true" original-local-location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-xml\ivy-2.11.0-M4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-xml/2.11.0-M4/scala-xml-2.11.0-M4.pom"/>
+				<caller organisation="default" name="parameterization_2.11" conf="test, compile, runtime" rev="2.11.0-M4" rev-constraint-default="2.11.0-M4" rev-constraint-dynamic="2.11.0-M4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-xml" type="jar" ext="jar" status="successful" details="" size="636403" time="243668" location="C:\Users\pietro.speri\.ivy2\cache\org.scala-lang\scala-xml\jars\scala-xml-2.11.0-M4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-xml/2.11.0-M4/scala-xml-2.11.0-M4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.akka" name="akka-actor_2.10">
 			<revision name="2.3.16" status="release" pubdate="20161028170746" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="5">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>

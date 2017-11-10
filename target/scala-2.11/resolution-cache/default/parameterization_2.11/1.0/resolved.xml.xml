@@ -4,7 +4,7 @@
 		module="parameterization_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20171017103824"
+		publication="20171110105953"
 	>
 		<description>
 		Parameterization
@@ -36,5 +36,6 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.5" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="com.typesafe.scala-logging" name="scala-logging-slf4j_2.10" rev="2.1.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.akka" name="akka-actor_2.10" rev="2.3.16" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-xml" rev="2.11.0-M4" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -1,6 +1,7 @@
 /**
   * Created by Pietro.Speri on 06/11/2017.
   */
+
 object XMLInfo {
   def main(args:Array[String])={
     val inf = new Inf {
