@@ -1,7 +1,7 @@
 /**
   * Created by Pietro.Speri on 13/11/2017.
   */
-object emptyTree extends Tree[Nothing]{
+object EmptyTree extends Tree[Nothing]{
 
   override def elem: Nothing = throw new NoSuchElementException
 
