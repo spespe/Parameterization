@@ -9,13 +9,14 @@ import scala.io.Source
   */
 object fut {
 
-  def writeFile(fileName:String, text:String, mode:String): Unit ={
-    val bw = new BufferedWriter(new FileWriter(fileName))
-    mode match {
-      case "a" => bw.append(text); bw.flush
-      case "w" => bw.write(text); bw.flush
-      case _ => {System.err.println("Error, the mode can be 'a' for append or 'o' for overwrite."); System.exit(1)}
+  def writeFile(fileName:String, text:String, overwrite:Boolean): Unit ={
+    require(overwrite.booleanValue(),"[THE ARGUMENT PASSED IS NOT A VALID BOOLEAN TYPE]")
+    val bw = new BufferedWriter(new FileWriter(fileName, overwrite))
+    overwrite match {
+      case false => bw.append(text)
+      case true => bw.write(text)
     }
+    bw.flush
     bw.close
   }
 }
