@@ -10,7 +10,6 @@ import scala.io.Source
 object fut {
 
   def writeFile(fileName:String, text:String, overwrite:Boolean): Unit ={
-    require(overwrite.booleanValue(),"[THE ARGUMENT PASSED IS NOT A VALID BOOLEAN TYPE]")
     val bw = new BufferedWriter(new FileWriter(fileName, overwrite))
     overwrite match {
       case false => bw.append(text)
@@ -19,4 +18,6 @@ object fut {
     bw.flush
     bw.close
   }
+
 }
+
