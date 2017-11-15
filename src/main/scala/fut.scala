@@ -16,9 +16,16 @@ object fut {
       case x :: xs => drop(xs, n - 1)
     }
 
+  def printExceptionDetails(ex:Exception, text:String): Unit ={
+    println("["+text.toUpperCase+"]")
+    println(ex.getMessage)
+    println(ex.toString)
+    ex.printStackTrace
+  }
+
   def writeFile(fileName:String, text:String, overwrite:Boolean): Unit ={
-    val bw = new BufferedWriter(new FileWriter(fileName, overwrite))
     try{
+      val bw = new BufferedWriter(new FileWriter(fileName, overwrite))
       overwrite match {
         case false => bw.append(text)
         case true => bw.write(text)
@@ -26,19 +33,8 @@ object fut {
       bw.flush
       bw.close
     } catch {
-      case ex:FileNotFoundException => {
-        println("[FILE NOT FOUND EXCEPTION]")
-        println(ex.getMessage)
-        println(ex.toString)
-        ex.printStackTrace
-      }
-      case ex:IOException => {
-        println("[IO EXCEPTION]")
-        println(ex.getMessage)
-        println(ex.toString)
-        ex.printStackTrace
-      }
-      case _ =>
+      case ex:IOException => printExceptionDetails(ex,"IO EXCEPTION")
+      case _ => 
     }
   }
 
@@ -46,18 +42,8 @@ object fut {
     try{
       Source.fromFile(fileName).getLines.foreach(println)
     } catch {
-      case ex:FileNotFoundException => {
-        println("[FILE NOT FOUND EXCEPTION]")
-        println(ex.getMessage)
-        println(ex.toString)
-        ex.printStackTrace
-      }
-      case ex:IOException => {
-        println("[IO EXCEPTION]")
-        println(ex.getMessage)
-        println(ex.toString)
-        ex.printStackTrace
-      }
+      case ex:FileNotFoundException => printExceptionDetails(ex, "FILE NOT FOUND EXCEPTION")
+      case ex:IOException => printExceptionDetails(ex, "IO EXCEPTION")
     }
   }
 
