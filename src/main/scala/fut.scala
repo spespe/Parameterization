@@ -35,5 +35,24 @@ object fut {
     }
   }
 
+  def readFile(fileName:String){
+    try{
+      Source.fromFile(fileName).getLines.foreach(println)
+    } catch {
+      case ex:FileNotFoundException => {
+        println("[FILE NOT FOUND EXCEPTION]")
+        println(ex.getMessage)
+        println(ex.toString)
+        ex.printStackTrace
+      }
+      case ex:IOException => {
+        println("[IO EXCEPTION]")
+        println(ex.getMessage)
+        println(ex.toString)
+        ex.printStackTrace
+      }
+    }
+  }
+
 }
 
