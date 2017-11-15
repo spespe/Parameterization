@@ -9,6 +9,13 @@ import scala.io.Source
   */
 object fut {
 
+  def drop[A](l: List[A], n: Int): List[A] =
+    if (n <= 0) l
+    else l match {
+      case List() => Nil
+      case x :: xs => drop(xs, n - 1)
+    }
+
   def writeFile(fileName:String, text:String, overwrite:Boolean): Unit ={
     val bw = new BufferedWriter(new FileWriter(fileName, overwrite))
     try{
