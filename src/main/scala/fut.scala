@@ -21,15 +21,15 @@ object fut {
     } catch {
       case ex:FileNotFoundException => {
         println("[FILE NOT FOUND EXCEPTION]")
+        println(ex.getMessage)
+        println(ex.toString)
         ex.printStackTrace
-        ex.getMessage
-        ex.toString
       }
       case ex:IOException => {
         println("[IO EXCEPTION]")
+        println(ex.getMessage)
+        println(ex.toString)
         ex.printStackTrace
-        ex.getMessage
-        ex.toString
       }
       case _ =>
     }
