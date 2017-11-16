@@ -34,7 +34,7 @@ object fut {
       bw.close
     } catch {
       case ex:IOException => printExceptionDetails(ex,"IO EXCEPTION")
-      case _ => 
+      case _ =>
     }
   }
 
