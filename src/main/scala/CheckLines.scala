@@ -15,6 +15,15 @@ object CheckLines{
       checkLine(line)
   }
 
+  def isContainingAllUnique(s:String) = s match {
+    case "" => false
+    case s: String => if (s.length == s.distinct.length) true else false
+    case _ => {
+      println("[NOT A VALID STRING PASSED]")
+      System.exit(1)
+    }
+  }
+
   def longestWord(fileName:String)={
     val word = Source.fromFile(fileName).getLines.flatMap(_.split(" ")).reduceLeft((a,b)=>if(a.length>b.length) a else b)
     println(word+": LENGTH["+word.length+"]")
