@@ -15,15 +15,10 @@ object CheckLines{
       checkLine(line)
   }
 
-  def findLongest(a:String, b:String){
-    if(a.length > b.length) a else b
-  }
-
   def longestWord(fileName:String)={
-    val word = Source.fromFile(fileName).getLines.flatMap(_.split(" ")).reduceLeft(findLongest)
+    val word = Source.fromFile(fileName).getLines.flatMap(_.split(" ")).reduceLeft((a,b)=>if(a.length>b.length) a else b)
     println(word+": LENGTH["+word.length+"]")
   }
-
 
   def parseToArrayDouble(input:String):Array[Double]={
     val splitted = input.split(",")
