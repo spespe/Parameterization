@@ -24,11 +24,14 @@ object CheckLines{
     }
   }
 
-  //Reverse not wanted here
-  def reverse(s:String)={
-    var str = ""
-    for(i <- s.length-1 to 0 by -1) str=str+s(i)
-    str
+  def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
+    @annotation.tailrec
+    def loop(n: Int): Int =
+      if (n >= ds.length) -1
+      else if (p(ds(n))) n
+      else loop(n + 1)
+
+    loop(0)
   }
 
   def repetitionString(s:String)={
