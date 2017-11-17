@@ -24,6 +24,20 @@ object CheckLines{
     }
   }
 
+  def repetitionString(s:String)={
+    var count = 1
+    var str = ""
+    for(i <- 0 to s.length-1){
+      val letter = if(i>0) s(i-1) else ""
+      if(s(i) == letter) count=count+1
+      else {
+        str=str+s(i)+count.toString
+        count=1
+      }
+    }
+    println(str)
+  }
+
   def check4Permutation(s1:String, s2:String):Boolean={
     if(s1.sorted.length==s2.sorted.length) true else false
   }
