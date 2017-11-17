@@ -24,6 +24,13 @@ object CheckLines{
     }
   }
 
+  //Reverse not wanted here
+  def reverse(s:String)={
+    var str = ""
+    for(i <- s.length-1 to 0 by -1) str=str+s(i)
+    str
+  }
+
   def repetitionString(s:String)={
     var count = 1
     var str = ""
