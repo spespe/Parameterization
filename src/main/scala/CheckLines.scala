@@ -34,18 +34,14 @@ object CheckLines{
     loop(0)
   }
 
-  def repetitionString(s:String)={
-    var count = 1
-    var str = ""
-    for(i <- 0 to s.length-1){
-      val letter = if(i>0) s(i-1) else ""
-      if(s(i) == letter) count=count+1
-      else {
-        str=str+s(i)+count.toString
-        count=1
-      }
+  def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean = {
+    @annotation.tailrec
+    def go(n: Int): Boolean = {
+      if (n >= as.length - 1) true
+      else if (gt(as(n), as(n + 1))) false
+      else go(n + 1)
     }
-    println(str)
+    go(0)
   }
 
   def check4Permutation(s1:String, s2:String):Boolean={
