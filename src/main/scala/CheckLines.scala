@@ -38,6 +38,8 @@ object CheckLines{
     case x :: xs => foldLeft(xs, f(z, x))(f)
   }
 
+  def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
+
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
     @annotation.tailrec
     def loop(n: Int): Int =
