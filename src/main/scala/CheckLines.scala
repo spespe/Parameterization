@@ -31,6 +31,13 @@ object CheckLines{
   }
 
 
+  //Tail recursive implementation of foldLeft
+  @annotation.tailrec
+  def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = l match {
+    case Nil => z
+    case x :: xs => foldLeft(xs, f(z, x))(f)
+  }
+
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
     @annotation.tailrec
     def loop(n: Int): Int =
