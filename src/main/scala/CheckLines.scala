@@ -38,6 +38,12 @@ object CheckLines{
     case x :: xs => foldLeft(xs, f(z, x))(f)
   }
 
+  @annotation.tailrec
+  def dropWhile[A](l1: List[A], f: A => Boolean): List[A] = l1 match {
+    case x :: xs if (f(x)) => dropWhile(xs, f)
+    case _ => l1
+  }
+
   def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
 
   def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
