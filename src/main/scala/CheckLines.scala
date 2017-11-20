@@ -24,6 +24,13 @@ object CheckLines{
     }
   }
 
+  //Recursive implementation of foldRight to be used for other methods
+  def foldRight[A, B](l: List[A], z: B)(f: (A, B) => B): B = l match {
+    case Nil => z
+    case x :: xs => f(x, foldRight(xs, z)(f))
+  }
+
+
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
     @annotation.tailrec
     def loop(n: Int): Int =
