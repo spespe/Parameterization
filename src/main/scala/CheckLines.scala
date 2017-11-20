@@ -40,6 +40,8 @@ object CheckLines{
 
   def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
 
+  def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
+
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
     @annotation.tailrec
     def loop(n: Int): Int =
