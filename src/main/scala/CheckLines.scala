@@ -50,6 +50,13 @@ object CheckLines{
     case _ => l
   }
 
+  //Recursive init method
+  def init[A](l: List[A]): List[A] = l match {
+    case List() => sys.error("The list passed is empty.")
+    case _ :: Nil => Nil
+    case x :: xs => x :: init(xs)
+  }
+
   def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
 
   def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
