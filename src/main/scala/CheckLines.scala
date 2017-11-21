@@ -44,6 +44,12 @@ object CheckLines{
     case _ => l1
   }
 
+  //Recursive implementation of dropWhile curried
+  def dropWhileCurried[A](l: List[A])(f: A => Boolean): List[A] = l match {
+    case x :: xs if f(x) => x :: dropWhileCurried(xs)(f)
+    case _ => l
+  }
+
   def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
 
   def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
