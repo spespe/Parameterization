@@ -15,6 +15,12 @@ object CheckLines{
       checkLine(line)
   }
 
+
+  //Append
+  def append[T](xs:List[T], ys:List[T]):List[T] = xs match {
+    case _ =>
+  }
+
   def isContainingAllUnique(s:String) = s match {
     case "" => false
     case s: String => if (s.length == s.distinct.length) true else false
