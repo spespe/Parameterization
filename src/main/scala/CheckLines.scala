@@ -112,6 +112,9 @@ object CheckLines{
   //Transformation via foldRight
   def transformDouble2String(l:List[Double]):List[String] = foldRight(l,Nil:List[String])((x,xs) => x.toString::xs)
 
+  //Generic filter implementation via foldRight
+  def filter[A](l:List[A])(p:A=>Boolean):List[A]= foldRight(l,Nil:List[A])((x,xs) => if(p(x)) x::xs else xs)
+
   def parseToTuple(input:String):(Int, Int, Double, Int)={
     val splitted = input.split(",")
     require(splitted.size==4)
