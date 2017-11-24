@@ -109,6 +109,9 @@ object CheckLines{
 
   def addString(l:List[String],s:String):List[String] = foldRight(l,Nil:List[String])((x,y)=>x+s::y)
 
+  //Transformation via foldRight
+  def transformDouble2String(l:List[Double]):List[String] = foldRight(l,Nil:List[String])((x,xs) => x.toString::xs)
+
   def parseToTuple(input:String):(Int, Int, Double, Int)={
     val splitted = input.split(",")
     require(splitted.size==4)
