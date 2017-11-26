@@ -118,6 +118,9 @@ object CheckLines{
   //Reimplementing map method
   def map[A,B](l:List[A])(f:A=>B):List[B] = foldRight(l,Nil:List[B])((x,xs)=>f(x)::xs)
 
+  //Creation of concat method using the foldRight
+  def concat2[A](l: List[List[A]]): List[A] = foldRight(l, Nil: List[A])(append)
+
   def parseToTuple(input:String):(Int, Int, Double, Int)={
     val splitted = input.split(",")
     require(splitted.size==4)
