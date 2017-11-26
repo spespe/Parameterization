@@ -121,6 +121,9 @@ object CheckLines{
   //Creation of concat method using the foldRight
   def concat2[A](l: List[List[A]]): List[A] = foldRight(l, Nil: List[A])(append)
 
+  //Flatmap using concat2 method
+  def flatMap[A,B](l:List[A])(f:A=>List[B]):List[B] = concat2(map(l)(f))
+
   def parseToTuple(input:String):(Int, Int, Double, Int)={
     val splitted = input.split(",")
     require(splitted.size==4)
