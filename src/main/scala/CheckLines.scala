@@ -115,6 +115,9 @@ object CheckLines{
   //Generic filter implementation via foldRight
   def filter[A](l:List[A])(p:A=>Boolean):List[A]= foldRight(l,Nil:List[A])((x,xs) => if(p(x)) x::xs else xs)
 
+  //Reimplementing map method
+  def map[A,B](l:List[A])(f:A=>B):List[B] = foldRight(l,Nil:List[B])((x,xs)=>f(x)::xs)
+
   def parseToTuple(input:String):(Int, Int, Double, Int)={
     val splitted = input.split(",")
     require(splitted.size==4)
