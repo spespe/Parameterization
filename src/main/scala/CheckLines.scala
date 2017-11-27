@@ -136,7 +136,7 @@ object CheckLines{
   def addElem(l:List[Int], l2:List[Int]):List[Int] = (l,l2) match {
     case (Nil, _) => l2
     case (_, Nil) => l
-
+    case (x::xs,y::ys) => x+y::addElem(xs,ys)
   }
 
 }
