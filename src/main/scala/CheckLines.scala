@@ -132,5 +132,12 @@ object CheckLines{
     require(splitted.size==4)
     (splitted(0).toInt, splitted(1).toInt, splitted(2).toDouble, splitted(3).toInt)
   }
+
+  def addElem(l:List[Int], l2:List[Int]):List[Int] = (l,l2) match {
+    case (Nil, _) => l2
+    case (_, Nil) => l
+
+  }
+
 }
 
