@@ -124,6 +124,9 @@ object CheckLines{
   //Flatmap using concat2 method
   def flatMap[A,B](l:List[A])(f:A=>List[B]):List[B] = concat2(map(l)(f))
 
+  //Filter via flatMap
+  def filterViaFlatMap[A](l: List[A])(f: A => Boolean): List[A] = flatMap(l)(a => if (f(a)) List(a) else Nil)
+
   def parseToTuple(input:String):(Int, Int, Double, Int)={
     val splitted = input.split(",")
     require(splitted.size==4)
