@@ -145,7 +145,8 @@ object CheckLines{
     case (_, Nil) => Nil
     case (x::xs,y::ys) => f(x,y)::addElemGeneric(xs,ys)(f)
   }
-  
+
+  //Tail Recursive methods
   @annotation.tailrec
   def startsWith[A](l:List[A],l2:List[A]):Boolean = (l,l2) match {
     case (_, Nil) => true
@@ -153,5 +154,11 @@ object CheckLines{
     case _ => false
   }
 
+  @annotation.tailrec
+  def hasSubSequence[A](l:List[A],l2:List[A]):Boolean = l match {
+    case Nil => l2 == Nil
+    case _ if startsWith(l,l2) => true
+    case x::xs => hasSubSequence(xs,l2)
+  }
 }
 
