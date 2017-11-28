@@ -139,5 +139,12 @@ object CheckLines{
     case (x::xs,y::ys) => x+y::addElem(xs,ys)
   }
 
+  //Generalization of addElem
+  def addElemGeneric[A,B,C](l:List[A],l2:List[B])(f:(A,B)=>C):List[C] = (l,l2) match {
+    case (Nil, _) => Nil
+    case (_, Nil) => Nil
+    case (x::xs,y::ys) => f(x,y)::addElemGeneric(xs,ys)(f)
+  }
+
 }
 
