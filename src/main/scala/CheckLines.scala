@@ -145,6 +145,13 @@ object CheckLines{
     case (_, Nil) => Nil
     case (x::xs,y::ys) => f(x,y)::addElemGeneric(xs,ys)(f)
   }
+  
+  @annotation.tailrec
+  def startsWith[A](l:List[A],l2:List[A]):Boolean = (l,l2) match {
+    case (_, Nil) => true
+    case (x::xs,y::ys) if x == y => startsWith(xs,ys)
+    case _ => false
+  }
 
 }
 
