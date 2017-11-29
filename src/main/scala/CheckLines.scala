@@ -70,11 +70,11 @@ object CheckLines{
 
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
     @annotation.tailrec
-    def loop(n: Int): Int =
+    def loop(n: Int): Int = {
       if (n >= ds.length) -1
       else if (p(ds(n))) n
       else loop(n + 1)
-
+    }
     loop(0)
   }
 
@@ -160,5 +160,13 @@ object CheckLines{
     case _ if startsWith(l,l2) => true
     case x::xs => hasSubSequence(xs,l2)
   }
+
+
+  //Mean for sequence of doubles
+  def mean(xs: Seq[Double]): Option[Double] =
+    if (xs.isEmpty) None
+    else Some(xs.sum / xs.length)
+
+
 }
 
