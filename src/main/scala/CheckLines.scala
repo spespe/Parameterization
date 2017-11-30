@@ -139,6 +139,12 @@ object CheckLines{
     case (x::xs,y::ys) => x+y::addElem(xs,ys)
   }
 
+  def traverse[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] =
+    a match {
+      case Nil => Some(Nil)
+      case h::t => map(f(h), traverse(t)(f))(_ :: _)
+    }
+
   //Generalization of addElem
   def addElemGeneric[A,B,C](l:List[A],l2:List[B])(f:(A,B)=>C):List[C] = (l,l2) match {
     case (Nil, _) => Nil
