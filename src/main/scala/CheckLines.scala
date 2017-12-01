@@ -139,6 +139,11 @@ object CheckLines{
     case (x::xs,y::ys) => x+y::addElem(xs,ys)
   }
 
+  def formatResult(name: String, n: Int, f: Int => Int) = {
+    val msg = "The %s of %d is %d."
+    msg.format(name, n, f(n))
+  }
+
   def traverse[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] =
     a match {
       case Nil => Some(Nil)
