@@ -172,6 +172,11 @@ object CheckLines{
     case x::xs => hasSubSequence(xs,l2)
   }
 
+  //Faster than sum using fold
+  def summing(l: List[Int]): Int = l match {
+    case List() => 0
+    case ::(x, xs) => x + summing(xs)
+  }
 
   //Mean for sequence of doubles
   def mean(xs: Seq[Double]): Option[Double] =
