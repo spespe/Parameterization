@@ -37,6 +37,11 @@ object CheckLines{
     case x :: xs => f(x, foldRight(xs, z)(f))
   }
 
+  //Tail implementation
+  def tail[A](l: List[A]): List[A] = l match {
+    case List() => sys.error("This is an empty list")
+    case x :: xs => xs
+  }
 
   //Tail recursive implementation of foldLeft
   @annotation.tailrec
