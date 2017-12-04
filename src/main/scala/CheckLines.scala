@@ -54,6 +54,10 @@ object CheckLines{
   def foldRightViaFoldLeft[A,B](l: List[A], z: B)(f: (A,B) => B): B =
     foldLeft(reverseList(l), z)((b,a) => f(a,b))
 
+  //FoldLeft via foldRight
+  def foldLeftViaFoldRight[A,B](l: List[A], z: B)(f: (B,A) => B): B =
+    foldRight(l, (b:B) => b)((a,g) => b => g(f(b,a)))(z)
+
   @annotation.tailrec
   def dropWhile[A](l1: List[A], f: A => Boolean): List[A] = l1 match {
     case x :: xs if (f(x)) => dropWhile(xs, f)
