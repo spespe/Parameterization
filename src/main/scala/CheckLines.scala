@@ -115,6 +115,8 @@ object CheckLines{
     println(word+": LENGTH["+word.length+"]")
   }
 
+  def lengthList(l:List[Int]):Int=l.foldLeft(0)((_,x)=>x+1)
+
   def parseToArrayDouble(input:String):Array[Double]={
     val splitted = input.split(",")
     splitted.map(x=>x.toDouble)
