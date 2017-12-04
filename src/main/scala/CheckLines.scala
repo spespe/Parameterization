@@ -155,6 +155,8 @@ object CheckLines{
       case h::t => map(f(h), traverse(t)(f))(_ :: _)
     }
 
+  def lenghtList[A](l: List[A]): Int = foldRight(l, 0)((_, x) => x + 1)
+
   //Generalization of addElem
   def addElemGeneric[A,B,C](l:List[A],l2:List[B])(f:(A,B)=>C):List[C] = (l,l2) match {
     case (Nil, _) => Nil
