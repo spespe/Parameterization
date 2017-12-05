@@ -115,6 +115,8 @@ object CheckLines{
     println(word+": LENGTH["+word.length+"]")
   }
 
+  def maximumElement(xs:List[Int]):Int = xs.reduce((a,b)=>if(a>b) a else b)
+  
   //Generic
   def lengthList[A](l:List[A])=l.foldLeft(0)((a,_)=>a+1)
 
