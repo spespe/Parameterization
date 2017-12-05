@@ -115,7 +115,8 @@ object CheckLines{
     println(word+": LENGTH["+word.length+"]")
   }
 
-  def lengthList(l:List[Int]):Int=l.foldLeft(0)((_,x)=>x+1)
+  //Generic
+  def lengthList[A](l:List[A])=l.foldLeft(0)((a,_)=>a+1)
 
   def parseToArrayDouble(input:String):Array[Double]={
     val splitted = input.split(",")
@@ -200,6 +201,11 @@ object CheckLines{
     if (xs.isEmpty) None
     else Some(xs.sum / xs.length)
 
+  //Mean version2
+  def mean(s:Seq[Double]):Double = s match {
+    case Nil => throw new ArithmeticException("The sequence is empty!")
+    case _ => s.sum/s.length
+  }
 
 }
 
