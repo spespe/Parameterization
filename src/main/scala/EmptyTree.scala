@@ -19,6 +19,8 @@ trait Tree1[+T]{
   def right:Tree[T]
 }
 
+sealed trait Tree[+A]
+case class Leaf[A](value:A) extends Tree[A]
 
 
 
