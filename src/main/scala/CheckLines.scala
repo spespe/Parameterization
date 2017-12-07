@@ -1,4 +1,5 @@
 import scala.io.Source
+import scala.util.Random
 /**
   * Created by Pietro.Speri on 07/11/2017.
   */
@@ -41,6 +42,12 @@ object CheckLines{
   def tail[A](l: List[A]): List[A] = l match {
     case List() => sys.error("This is an empty list")
     case x :: xs => xs
+  }
+
+  //Without using Random.shuffle
+  def randomShuffle[A](xs:List[A]):List[A]={
+    val seq = xs.permutations.toSeq
+    seq.take(Random.nextInt(seq.size)+1).last
   }
 
   //Tail recursive implementation of foldLeft
