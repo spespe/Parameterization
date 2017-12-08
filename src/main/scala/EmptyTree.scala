@@ -3,7 +3,7 @@ import sun.reflect.generics.tree.Tree
 /**
   * Created by Pietro.Speri on 13/11/2017.
   */
-object EmptyTree extends Tree[Nothing]{
+object EmptyTree extends Tree1[Nothing]{
 
   override def elem: Nothing = throw new NoSuchElementException
 
@@ -44,3 +44,7 @@ def mapTree[A,B](t:Tree[A])(f: A => B):Tree[B] = t match {
   case Branch(x,y) => Branch(mapTree(x)(f),mapTree(y)(f))
 }
 
+def foldTree[A,B](t:Tree[A])(f:A=>B)(g: (B,B)=>B):B = t match {
+  case Leaf(x) => f(x)
+  case Branch(x,y) => g(foldTree(x)(f)(g),foldTree(y)(f)(g))
+}
