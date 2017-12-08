@@ -33,3 +33,8 @@ def maximumElem(t:Tree[Int]):Int = t match {
   case Leaf(x) => x
   case Branch(x,y) => maximumElem(x) max maximumElem(y)
 }
+
+def depth(t:Tree[Int]):Int = t match {
+  case Leaf(x) => 0
+  case Branch(x,y) => 1 + (depth(x) max depth(y))
+}
