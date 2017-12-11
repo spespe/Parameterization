@@ -41,6 +41,8 @@ def depth(t:Tree[Int]):Int = t match {
   case Branch(x,y) => 1 + (depth(x) max depth(y))
 }
 
+def depth2(t:Tree[Int]):Int = foldTree(t)(x=>0)((a,b)=> 1 + (a max b))
+
 def mapTree[A,B](t:Tree[A])(f: A => B):Tree[B] = t match {
   case Leaf(x) => Leaf(f(x))
   case Branch(x,y) => Branch(mapTree(x)(f),mapTree(y)(f))
