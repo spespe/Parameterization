@@ -34,6 +34,8 @@ def maximumElem(t:Tree[Int]):Int = t match {
   case Branch(x,y) => maximumElem(x) max maximumElem(y)
 }
 
+def maximumElem2(t:Tree[Int]):Int = foldTree(t)(x => x)(_ max _)
+
 def depth(t:Tree[Int]):Int = t match {
   case Leaf(x) => 0
   case Branch(x,y) => 1 + (depth(x) max depth(y))
@@ -48,3 +50,4 @@ def foldTree[A,B](t:Tree[A])(f:A=>B)(g: (B,B)=>B):B = t match {
   case Leaf(x) => f(x)
   case Branch(x,y) => g(foldTree(x)(f)(g),foldTree(y)(f)(g))
 }
+
