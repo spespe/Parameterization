@@ -48,6 +48,8 @@ def mapTree[A,B](t:Tree[A])(f: A => B):Tree[B] = t match {
   case Branch(x,y) => Branch(mapTree(x)(f),mapTree(y)(f))
 }
 
+def mapTree2[A,B](t:Tree[A])(f: A=>B):Tree[B] = foldTree(t)(x=>Leaf(f(x)):Tree[B])(Branch(_,_))
+
 def foldTree[A,B](t:Tree[A])(f:A=>B)(g: (B,B)=>B):B = t match {
   case Leaf(x) => f(x)
   case Branch(x,y) => g(foldTree(x)(f)(g),foldTree(y)(f)(g))
