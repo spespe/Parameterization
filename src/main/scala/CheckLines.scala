@@ -113,6 +113,11 @@ object CheckLines{
     case x :: xs => v :: xs
   }
 
+  def getHead[Any](l:List[Any]):Any = l match {
+    case List() => sys.error("This is an empty list")
+    case x::xs => x
+  }
+
   def check4Permutation(s1:String, s2:String):Boolean={
     if(s1.sorted.length==s2.sorted.length) true else false
   }
