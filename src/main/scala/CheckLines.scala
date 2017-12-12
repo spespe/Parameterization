@@ -91,6 +91,8 @@ object CheckLines{
     case Nil => Nil
   }
 
+  def orderWordsLength(l:List[String]):List[(String, Int)] = l.groupBy(x=>x).map(x=>(x._1, x._2.length)).toList
+
   def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
 
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
