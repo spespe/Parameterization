@@ -91,7 +91,7 @@ object CheckLines{
     case Nil => Nil
   }
 
-  def orderWordsLength(l:List[String]):List[(String, Int)] = l.groupBy(x=>x).map(x=>(x._1, x._2.length)).toList
+  def orderWordsLength(l:List[String]) = l.groupBy(x=>x).map(x=>(x._1,x._2.length)).toList.sortBy(_._1).sortBy(_._2)
 
   def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
 
