@@ -86,6 +86,11 @@ object CheckLines{
 
   def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
 
+  def reverseList2[A](l:List[A]):List[A] = l match {
+    case x::xs => reverseList2(xs)++List(x)
+    case Nil => Nil
+  }
+
   def append2[A](l:List[A], l2:List[A]):List[A] = foldRight(l,l2)(_::_)
 
   def findFirst[A](ds: Array[A], p: A => Boolean): Int = {
