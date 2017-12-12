@@ -228,5 +228,8 @@ object CheckLines{
     case _ => s.sum/s.length
   }
 
+  //Tail recursive gcd implementation
+  def gcd(a:Int,b:Int):Int = if(b==0) 0 else gcd(b,a%b)
+
 }
 
