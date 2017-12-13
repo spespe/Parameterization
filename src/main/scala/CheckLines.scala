@@ -204,6 +204,10 @@ object CheckLines{
     case _ => false
   }
 
+  //ApplyList
+  def applyList[A](s:A*):List[A]= if(s.isEmpty) List() else applyList(s.tail:_*)
+
+
   @annotation.tailrec
   def hasSubSequence[A](l:List[A],l2:List[A]):Boolean = l match {
     case Nil => l2 == Nil
