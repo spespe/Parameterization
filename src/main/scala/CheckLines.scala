@@ -196,6 +196,12 @@ object CheckLines{
     case (x::xs,y::ys) => f(x,y)::addElemGeneric(xs,ys)(f)
   }
 
+  //Head method
+  def head[B](l:List[B]):B= l match {
+    case Nil => sys.error("Empty list passed")
+    case ::(x,_) => x
+  }
+
   //Tail Recursive methods
   @annotation.tailrec
   def startsWith[A](l:List[A],l2:List[A]):Boolean = (l,l2) match {
@@ -209,7 +215,7 @@ object CheckLines{
   case Nil => Nil
   case _ => ::(s.head, applyList(s.tail:_*))
 }
-  
+
   @annotation.tailrec
   def hasSubSequence[A](l:List[A],l2:List[A]):Boolean = l match {
     case Nil => l2 == Nil
