@@ -62,5 +62,6 @@ def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case Leaf => None
   case Branch ((k,v), l, r) if (k == key) => Some(v)
   case Branch ((k,v), l, r) if (k > key) => search(key,l)
+  case Branch ((k,v), l, r) if (k < key) => search(key,r)
 }
 
