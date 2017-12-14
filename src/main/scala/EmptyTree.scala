@@ -1,3 +1,5 @@
+import java.util.Dictionary
+
 import sun.reflect.generics.tree.Tree
 
 /**
@@ -53,5 +55,12 @@ def mapTree2[A,B](t:Tree[A])(f: A=>B):Tree[B] = foldTree(t)(x=>Leaf(f(x)):Tree[B
 def foldTree[A,B](t:Tree[A])(f:A=>B)(g: (B,B)=>B):B = t match {
   case Leaf(x) => f(x)
   case Branch(x,y) => g(foldTree(x)(f)(g),foldTree(y)(f)(g))
+}
+
+//Search
+def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
+  case Leaf => None
+  case Branch ((k,v), l, r) if (k == key) => Some(v)
+  case Branch ((k,v), l, r) if (k > key) => search(key,l)
 }
 
