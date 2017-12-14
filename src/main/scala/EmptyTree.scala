@@ -57,6 +57,7 @@ def foldTree[A,B](t:Tree[A])(f:A=>B)(g: (B,B)=>B):B = t match {
   case Branch(x,y) => g(foldTree(x)(f)(g),foldTree(y)(f)(g))
 }
 
+type Dictionary[A] = BinTree[(String, A)]
 //Search
 def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case Leaf => None
