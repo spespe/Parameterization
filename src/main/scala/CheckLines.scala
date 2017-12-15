@@ -87,8 +87,14 @@ object CheckLines{
   def reverseList[A](l:List[A]):List[A] = foldLeft(l,List[A]())((acc,h)=>h::acc)
 
   def reverseList2[A](l:List[A]):List[A] = l match {
-    case x::xs => reverseList2(xs)++List(x)
+    case ::(x,xs) => reverseList2(xs)++List(x)
     case Nil => Nil
+  }
+
+  @annotation.tailrec
+  def reverseLists[A](l:List[A],acc:List[A]):List[A] = l match {
+    case Nil => acc
+    case ::(x,xs) => reverseLists(xs,x::acc)
   }
 
   def orderWordsLength(l:List[String]) = l.groupBy(x=>x).map(x=>(x._1,x._2.length)).toList.sortBy(_._1).sortBy(_._2)
