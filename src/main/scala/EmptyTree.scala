@@ -57,12 +57,16 @@ def foldTree[A,B](t:Tree[A])(f:A=>B)(g: (B,B)=>B):B = t match {
   case Branch(x,y) => g(foldTree(x)(f)(g),foldTree(y)(f)(g))
 }
 
+sealed trait BinTree[+A]
+case object Leaf extends BinTree[Nothing]
+case class BranchA[A](value:A, left: BinTree[A], right: BinTree[A]) extends BinTree[A]
+
 type Dictionary[A] = BinTree[(String, A)]
 //Search
 def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case Leaf => None
-  case Branch ((k,v), l, r) if (k == key) => Some(v)
-  case Branch ((k,v), l, r) if (k > key) => search(key,l)
-  case Branch ((k,v), l, r) if (k < key) => search(key,r)
+  case BranchA ((k,v), l, r) if (k == key) => Some(v)
+  case BranchA ((k,v), l, r) if (k > key) => search(key,l)
+  case BranchA ((k,v), l, r) if (k < key) => search(key,r)
 }
 
