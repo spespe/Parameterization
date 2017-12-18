@@ -62,6 +62,16 @@ case object Leaf extends BinTree[Nothing]
 case class BranchA[A](value:A, left: BinTree[A], right: BinTree[A]) extends BinTree[A]
 
 type Dictionary[A] = BinTree[(String, A)]
+
+
+def buildTree[T](l:List[T],):BinTree[T]= l match {
+  case Nil => Leaf
+  case ::(x,xs) => {
+    val p = xs.size/2
+    BranchA(x, buildTree(xs.take(p)), buildTree(xs.drop(p)))
+  }
+}
+
 //Search
 def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case Leaf => None

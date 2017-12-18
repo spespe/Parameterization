@@ -229,7 +229,7 @@ object CheckLines{
   def applyList[A](s:A*):List[A]= s match {
   case Nil => Nil
   case _ => ::(s.head, applyList(s.tail:_*))
-}
+  }
 
   @annotation.tailrec
   def hasSubSequence[A](l:List[A],l2:List[A]):Boolean = l match {
