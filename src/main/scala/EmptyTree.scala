@@ -72,6 +72,8 @@ def buildTree[T](l:List[T],):BinTree[T]= l match {
   }
 }
 
+def buildTreeComp(v:Int, d:Int):BinTree[Int] = if(d==0) Leaf else BranchA(v, buildTreeComp(2*v, d-1), buildTreeComp(2*v+1, d-1))
+
 //Search
 def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case Leaf => None
