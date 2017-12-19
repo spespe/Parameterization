@@ -64,7 +64,7 @@ case class BranchA[A](value:A, left: BinTree[A], right: BinTree[A]) extends BinT
 type Dictionary[A] = BinTree[(String, A)]
 
 
-def buildTree[T](l:List[T],):BinTree[T]= l match {
+def buildTree[T](l:List[T]):BinTree[T]= l match {
   case Nil => Leaf
   case ::(x,xs) => {
     val p = xs.size/2
