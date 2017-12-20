@@ -88,6 +88,7 @@ def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
 @unchecked
 def equalBinTree[A](t1:BinTree[A], t2:BinTree[A]):Boolean = (t1,t2) match {
   case (Leaf,Leaf) => true
+  case (BranchA(p1, d1, r1), BranchA(p2, d2, r2)) if p1 == p2 => equalBinTree(d1, d2)
   case _ => false
 }
 
