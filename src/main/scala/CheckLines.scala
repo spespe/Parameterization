@@ -1,3 +1,4 @@
+import scala.collection.immutable.Stream.cons
 import scala.io.Source
 import scala.util.Random
 /**
@@ -254,6 +255,9 @@ object CheckLines{
     case Nil => throw new ArithmeticException("The sequence is empty!")
     case _ => s.sum/s.length
   }
+
+  //Progression
+  def progression(d1:Double, d2:Double):Stream[Double] = cons(d1,progression(d1+d2,d2))
 
   //Tail recursive gcd implementation
   def gcd(a:Int,b:Int):Int = if(b==0) 0 else gcd(b,a%b)
