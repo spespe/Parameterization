@@ -85,6 +85,9 @@ def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case BranchA ((k,v), l, r) if (k < key) => search(key,r)
 }
 
+//ins
+def insert[A](k:String, v:A,d:Dictionary[A]):Dictionary[A]
+
 
 def equalBinTree[A](t1:BinTree[A], t2:BinTree[A]):Boolean = (t1,t2) match {
   case (Leaf,Leaf) => true
