@@ -86,7 +86,10 @@ def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
 }
 
 //ins
-def insert[A](k:String, v:A,d:Dictionary[A]):Dictionary[A]
+def insert[A](k:String, v:A, d:Dictionary[A]):Dictionary[A] = d match {
+  case Leaf => BranchA((k,v), Leaf, Leaf)
+  case BranchA((k1,v),l,r) if(k1==k) => println("Duplicated Key")
+}
 
 
 def equalBinTree[A](t1:BinTree[A], t2:BinTree[A]):Boolean = (t1,t2) match {
