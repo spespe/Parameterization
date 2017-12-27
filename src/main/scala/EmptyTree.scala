@@ -85,6 +85,12 @@ def search[A](key:String, dict:Dictionary[A]):Option[A] = dict match {
   case BranchA ((k,v), l, r) if (k < key) => search(key,r)
 }
 
+//upd
+def update[A](k:String, v:A, d:Dictionary[A]) = d match {
+  case BranchA((k1,v1),l,r) if (k1 == k) => BranchA((k1,v),l,r)
+  case BranchA((k1,v1),l,r) if (k1 > k) => BranchA((k1,v),update(k,v,l),r)
+  case BranchA((k1,v1),l,r) if (k1 < k) => BranchA((k1,v),l,update(k,v,r))
+}
 //ins
 def insert[A](k:String, v:A, d:Dictionary[A]):Dictionary[A] = d match {
   case Leaf => BranchA((k,v), Leaf, Leaf)
