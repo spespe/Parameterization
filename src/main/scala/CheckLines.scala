@@ -1,3 +1,5 @@
+import CheckLines.mul
+
 import scala.collection.immutable.Stream.cons
 import scala.io.Source
 import scala.util.Random
@@ -245,15 +247,13 @@ object CheckLines{
     case ::(x, xs) => x + summing(xs)
   }
 
-  //hiding
-  def mul(p:List[Int], q:List[Int]):List[Int] = (p) match {
-    case Nil => Nil
-    case ::(0,xs) => ::(0,mul(xs,q))
-    case ::(1,xs) => addElem(0,q,::(0,mul(xs,q)))
-  }
-
   //xtimes
   def xtimes(l1:List[Int], l2:List[Int]):List[Int] = {
+    def mul(p:List[Int], q:List[Int]):List[Int] = (p) match {
+      case Nil => Nil
+      case ::(0,xs) => ::(0,mul(xs,q))
+      case ::(1,xs) => addElem(0,q,::(0,mul(xs,q)))
+    }
     val r = mul(l1.reverse, l2.reverse)
     r.reverse
   }
