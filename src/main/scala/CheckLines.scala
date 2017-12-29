@@ -252,6 +252,11 @@ object CheckLines{
     case ::(1,xs) => addElem(0,q,::(0,mul(xs,q)))
   }
 
+  //xtimes
+  def xtimes(l1:List[Int], l2:List[Int]) = {
+    val r = mul(l1.reverse, l2.reverse)
+    r.reverse
+  }
 
   //Mean for sequence of doubles
   def mean(xs: Seq[Double]): Option[Double] =
