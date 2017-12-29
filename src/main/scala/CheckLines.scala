@@ -252,7 +252,7 @@ object CheckLines{
     def mul(p:List[Int], q:List[Int]):List[Int] = (p) match {
       case Nil => Nil
       case ::(0,xs) => ::(0,mul(xs,q))
-      case ::(1,xs) => addElem(0,q,::(0,mul(xs,q)))
+      case ::(1,xs) => add(0,q,::(0,mul(xs,q)))
     }
     val r = mul(l1.reverse, l2.reverse)
     r.reverse
