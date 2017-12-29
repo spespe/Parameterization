@@ -253,7 +253,7 @@ object CheckLines{
   }
 
   //xtimes
-  def xtimes(l1:List[Int], l2:List[Int]) = {
+  def xtimes(l1:List[Int], l2:List[Int]):List[Int] = {
     val r = mul(l1.reverse, l2.reverse)
     r.reverse
   }
