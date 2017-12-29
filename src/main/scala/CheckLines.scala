@@ -245,6 +245,14 @@ object CheckLines{
     case ::(x, xs) => x + summing(xs)
   }
 
+  //hiding
+  def mul(p:List[Int], q:List[Int]):List[Int] = (p) match {
+    case Nil => Nil
+    case ::(0,xs) => ::(0,mul(xs,q))
+    case ::(1,xs) => addElem(0,q,::(0,mul(xs,q)))
+  }
+
+
   //Mean for sequence of doubles
   def mean(xs: Seq[Double]): Option[Double] =
     if (xs.isEmpty) None
