@@ -250,7 +250,7 @@ object CheckLines{
   //add
   def addition(l1:List[Int], l2:List[Int]):List[Int] = (l1,l2) match {
     case (Nil,Nil) => Nil
-    case (Nil,x) => Nil
+    case (Nil,x) => x
     case (x, Nil) => x
   }
 
