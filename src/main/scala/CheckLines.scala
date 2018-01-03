@@ -252,6 +252,7 @@ object CheckLines{
     case List() => List(1)
     case ::(0,ls) => ::(1,ls)
     case ::(1,ls) => ::(0,increase(ls))
+    case _ => sys.error("Not a valid number")
   }
 
   //add
