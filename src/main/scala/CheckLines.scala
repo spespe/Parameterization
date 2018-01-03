@@ -252,6 +252,9 @@ object CheckLines{
     case (Nil,Nil) => Nil
     case (Nil,x) => x
     case (x, Nil) => x
+    case (x::xp,0::yp) => ::(x,addition(xp,yp))
+    case (0::xp,y::yp) => ::(y,addition(xp,yp))
+    case (x::xp,0::yp) => ::(0,addition(xp,yp))
   }
 
   //xtimes
