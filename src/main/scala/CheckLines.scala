@@ -247,6 +247,13 @@ object CheckLines{
     case ::(x, xs) => x + summing(xs)
   }
 
+  //increase
+  def increase(l:List[Int]):List[Int] = l match {
+    case List() => List(1)
+    case ::(0,ls) => ::(1,ls)
+    case ::(1,ls) => ::(0,increase(ls))
+  }
+
   //add
   def addition(l1:List[Int], l2:List[Int]):List[Int] = (l1,l2) match {
     case (Nil,Nil) => Nil
