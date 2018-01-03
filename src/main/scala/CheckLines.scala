@@ -255,6 +255,7 @@ object CheckLines{
     case (x::xp,0::yp) => ::(x,addition(xp,yp))
     case (0::xp,y::yp) => ::(y,addition(xp,yp))
     case (x::xp,0::yp) => ::(0,addition(xp,yp))
+    case _ => sys.error("Not a valid number")
   }
 
   //xtimes
