@@ -294,5 +294,7 @@ object CheckLines{
   //Tail recursive gcd implementation
   def gcd(a:Int,b:Int):Int = if(b==0) 0 else gcd(b,a%b)
 
+  def part[P <% Ordered[P]](el:P, s:List[P], fp:List[P], sp:List[P])
+
 }
 
