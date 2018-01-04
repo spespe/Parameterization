@@ -296,6 +296,7 @@ object CheckLines{
 
   def part[P <% Ordered[P]](el:P, s:List[P], fp:List[P], sp:List[P]):(List[P],List[P])= s match {
     case ::(xs,sl) => if(xs<el) part(el,sl,xs::fp,sp) else part(el,sl,sp,xs::sp)
+    case List() => (fp,sp)
   }
 
 }
