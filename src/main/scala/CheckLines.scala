@@ -299,5 +299,7 @@ object CheckLines{
     case List() => (fp,sp)
   }
 
+  //getBigger
+  def getBigger[P <% Ordered[P]](d:List[P]):(P,List[P])
 }
 
