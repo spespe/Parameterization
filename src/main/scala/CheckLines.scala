@@ -302,6 +302,11 @@ object CheckLines{
   //getBigger
   def getBigger[P <% Ordered[P]](d:List[P]):(P,List[P]) = d match {
     case (Nil) => (null.asInstanceOf[P],List())
+    case ::(f,Nil) => (f,List())
+    case ::(f,v) => {
+      val (p,s) = getBigger(v)
+      if(p>=f) (p,::(f,s)) else (f,::(p,s))
+    }
   }
 }
 
