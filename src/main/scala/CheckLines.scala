@@ -300,6 +300,8 @@ object CheckLines{
   }
 
   //getBigger
-  def getBigger[P <% Ordered[P]](d:List[P]):(P,List[P])
+  def getBigger[P <% Ordered[P]](d:List[P]):(P,List[P]) = d match {
+    case (Nil) => (null.asInstanceOf[P],List())
+  }
 }
 
