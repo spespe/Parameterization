@@ -308,5 +308,9 @@ object CheckLines{
       if(p>=f) (p,::(f,s)) else (f,::(p,s))
     }
   }
+
+  //sortBub
+  def sortBub[P <% Ordered[P]](d:List[Int]):List[P]
+
 }
 
