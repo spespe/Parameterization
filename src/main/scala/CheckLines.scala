@@ -310,7 +310,13 @@ object CheckLines{
   }
 
   //sortBub
-  def sortBub[P <% Ordered[P]](d:List[Int]):List[P]
+  def sortBub[P <% Ordered[P]](d:List[Int]):List[P] = d match {
+    case List() => Nil
+    case _ => {
+      val (f,s) = getBigger(d)
+      sortBub(s):::List(f)
+    }
+  }
 
 }
 
