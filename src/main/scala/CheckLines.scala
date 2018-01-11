@@ -323,6 +323,10 @@ object CheckLines{
     case ft::fv => {
       val min = fv.min
       val minInd = fv.indexOf(min)
+      if(ft <= min) ft::sortSel(fv) else {
+        val (fp,sp) = fv.splitAt(minInd)
+        sp.head::sortSel(fp:::ft:::sp.tail)
+      }
     }
 
 
