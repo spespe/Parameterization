@@ -317,7 +317,11 @@ object CheckLines{
   }
 
   //sortSel
-  def sortSel[P <% Ordered[P]](d:List[P]):List[P]
+  def sortSel[P <% Ordered[P]](d:List[P]):List[P] = d match {
+    case Nil => Nil
+    case ft::Nil => List(ft)
+
+  }
 
 }
 
