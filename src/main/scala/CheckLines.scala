@@ -320,6 +320,11 @@ object CheckLines{
   def sortSel[P <% Ordered[P]](d:List[P]):List[P] = d match {
     case Nil => Nil
     case ft::Nil => List(ft)
+    case ft::fv => {
+      val min = fv.min
+      val minInd = fv.indexOf(min)
+    }
+
 
   }
 
