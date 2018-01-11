@@ -316,5 +316,8 @@ object CheckLines{
       sortBub(s):::List(f)
   }
 
+  //sortSel
+  def sortSel[P <% Ordered[P]](d:List[P]):List[P]
+
 }
 
