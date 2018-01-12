@@ -313,7 +313,7 @@ object CheckLines{
   def sortBub[P <% Ordered[P]](d:List[Int]):List[P] = d match {
     case List() => Nil
     case _ => val (f,s) = getBigger(d)
-      sortBub(s):::List(f)
+      sortBub(s)::List(f)
   }
 
   //sortSel
@@ -328,9 +328,9 @@ object CheckLines{
         sp.head::sortSel(fp:::ft::sp.tail)
       }
     }
-
-
   }
+
+
 
 }
 
