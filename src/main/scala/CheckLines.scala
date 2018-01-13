@@ -330,7 +330,8 @@ object CheckLines{
     }
   }
 
-
+  //sortIns
+  def sortIns[P <% Ordered[P]](el:P, d:List[P]):List[P]  
 
 }
 
