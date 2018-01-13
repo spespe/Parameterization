@@ -331,7 +331,16 @@ object CheckLines{
   }
 
   //sortIns
-  def sortIns[P <% Ordered[P]](el:P, d:List[P]):List[P]  
+  def sortIns[P <% Ordered[P]](el:P, d:List[P]):List[P]  = {
+    if(d == Nil){
+      el::d
+    }
+    val first::last = d
+    if(first < el)
+      first::sortIns(el,last)
+    else
+      el::d
+  }
 
 }
 
