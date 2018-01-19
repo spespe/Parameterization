@@ -344,10 +344,14 @@ object CheckLines{
 
   //sortIns2
   def sortIns2[P <% Ordered[P]](d:List[P]):List[P] = {
-    val first = d.head
-    val last = d.tail
-    val t = sortIns2(last)
-    sortIns(first,t)
+    if(d==Nil)
+      Nil
+    else {
+      val first = d.head
+      val last = d.tail
+      val t = sortIns2(last)
+      sortIns(first, t)
+    }
   }
 
 
