@@ -357,6 +357,8 @@ object CheckLines{
     def splitSort[P <% Ordered[P]](l:List[P]):(List[P],List[P]) = {
       val lh = l.head
       val lt = l.tail
+      //Nil case
+      if(lt==Nil) return(lh::Nil,Nil)
       val lth = lt.head
       val ltt = lt.tail
       val (tl1,tl2) = splitSort(lt.tail)
