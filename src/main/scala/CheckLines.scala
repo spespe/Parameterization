@@ -342,5 +342,9 @@ object CheckLines{
       el::d
   }
 
+  //sortIns2
+  def sortIns2[P <% Ordered[P]](d:List[P]):List[P]
+
+
 }
 
