@@ -352,6 +352,10 @@ object CheckLines{
       val t = sortIns2(last)
       sortIns(first, t)
     }
+
+    //splitSort
+    def splitSort[P <% Ordered[P]](l:List[P]):(List[P],List[P])
+
   }
 
 
