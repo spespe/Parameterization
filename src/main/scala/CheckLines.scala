@@ -367,7 +367,10 @@ object CheckLines{
     (lh::tl1,lth::tl2)
   }
 
+  //merge
   def merge[P <% Ordered[P]](l1:List[P],l2:List[P]):List[P] = (l1, l2) match {
+    case (l1,Nil) => l1
+    case (Nil,l2) => l2
     case (l1h::l1t, l2h::l2t) => if(l1h>l2h) l2h::merge(l1,l2t) else l1h::merge(l1t,l2)
   }
 
