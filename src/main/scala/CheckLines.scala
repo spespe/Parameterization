@@ -354,20 +354,21 @@ object CheckLines{
     }
   }
 
-    //splitSort
-    def splitSort[P <% Ordered[P]](l:List[P]):(List[P],List[P]) = {
-      if(l==Nil) return(Nil,Nil)
-      val lh = l.head
-      val lt = l.tail
-      //Nil case
-      if(lt==Nil) return(lh::Nil,Nil)
-      val lth = lt.head
-      val ltt = lt.tail
-      val (tl1,tl2) = splitSort(lt.tail)
-      (lh::tl1,lth::tl2)
-    }
+  //splitSort
+  def splitSort[P <% Ordered[P]](l:List[P]):(List[P],List[P]) = {
+    if(l==Nil) return(Nil,Nil)
+    val lh = l.head
+    val lt = l.tail
+    //Nil case
+    if(lt==Nil) return(lh::Nil,Nil)
+    val lth = lt.head
+    val ltt = lt.tail
+    val (tl1,tl2) = splitSort(lt.tail)
+    (lh::tl1,lth::tl2)
+  }
 
-  
+  def merge[P <% Ordered[P]](l1:List[P],l2:List[P]):List[P]
+
 
 
 }
