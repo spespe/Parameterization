@@ -344,7 +344,7 @@ object CheckLines{
 
   //sortIns2
   def sortIns2[P <% Ordered[P]](d:List[P]):List[P] = {
-    if(d==Nil)
+    if (d == Nil)
       Nil
     else {
       val first = d.head
@@ -352,6 +352,7 @@ object CheckLines{
       val t = sortIns2(last)
       sortIns(first, t)
     }
+  }
 
     //splitSort
     def splitSort[P <% Ordered[P]](l:List[P]):(List[P],List[P]) = {
@@ -366,7 +367,7 @@ object CheckLines{
       (lh::tl1,lth::tl2)
     }
 
-  }
+  
 
 
 }
