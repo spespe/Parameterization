@@ -266,12 +266,17 @@ object CheckLines{
     case _ => sys.error("Not a valid number")
   }
 
+  //add method
+  def add(a:Int, l1:List[Int], l2:List[Int]):List[Int] = (l1,l2) match {
+    
+  }
+
   //xtimes
   def xtimes(l1:List[Int], l2:List[Int]):List[Int] = {
     def mul(p:List[Int], q:List[Int]):List[Int] = (p) match {
       case Nil => Nil
       case ::(0,xs) => ::(0,mul(xs,q))
-      case ::(1,xs) => addition(0,q,::(0,mul(xs,q)))
+      case ::(1,xs) => add(0,q,::(0,mul(xs,q)))
     }
     val r = mul(l1.reverse, l2.reverse)
     r.reverse
