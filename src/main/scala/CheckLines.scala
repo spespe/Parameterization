@@ -375,8 +375,10 @@ object CheckLines{
   }
 
   //mergeS
-  def mergeS[P <% Ordered[P]](l:List[P]):List[P] = {
-    //using splitSort method
+  def mergeS[P <% Ordered[P]](l:List[P]):List[P] = l match {
+    case Nil => l
+    case _ =>
+      //using splitSort method
     val (lh,lt) = splitSort(l)
     val lms1 = mergeS(lh)
     val lms2 = mergeS(lt)
