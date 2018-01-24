@@ -268,7 +268,10 @@ object CheckLines{
 
   //add method
   def add(a:Int, l1:List[Int], l2:List[Int]):List[Int] = (l1,l2) match {
-    
+    case (List(),List()) =>
+    case (List(), _ :: _) =>
+    case (_ :: _, List()) =>
+    case (p::ps,q::qs) => 
   }
 
   //xtimes
