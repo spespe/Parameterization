@@ -266,6 +266,8 @@ object CheckLines{
     case _ => sys.error("Not a valid number")
   }
 
+  //take
+  def take(i:Int,l:List[Int]):List[Int] 
 
 
   //add method
