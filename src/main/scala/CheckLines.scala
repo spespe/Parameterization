@@ -267,7 +267,10 @@ object CheckLines{
   }
 
   //take
-  def take(i:Int,l:List[Int]):List[Int] 
+  def take(i:Int,l:List[Int]):List[Int] = (i,l) match {
+    case (1, Nil) => List(1)
+    case (1, p::ps) => (1-p)::take(p,ps)
+  }
 
 
   //add method
