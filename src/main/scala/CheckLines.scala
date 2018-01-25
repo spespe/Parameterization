@@ -268,8 +268,10 @@ object CheckLines{
 
   //take
   def take(i:Int,l:List[Int]):List[Int] = (i,l) match {
-    case (1, Nil) => List(1)
-    case (1, p::ps) => (1-p)::take(p,ps)
+    case (0,p) => p
+    case (1,Nil) => List(1)
+    case (1,p::ps) => (1-p)::take(p,ps)
+    case (_,_) => throw new IllegalArgumentException("The input passed it is not valid.")
   }
 
 
