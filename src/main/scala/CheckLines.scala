@@ -404,6 +404,7 @@ object CheckLines{
   //pivotS
   def pivotS[P <% Ordered[P]](l:List[P]):List[P] = l match {
     case List() => List()
+    case p::List() => List(p)
     case p::ps => {
       //using part method defined above
       val (l1,l2) = part(p,ps,List(),List())
