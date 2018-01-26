@@ -401,5 +401,8 @@ object CheckLines{
     merge(lms1,lms2)
   }
 
+  //pivotS
+  def pivotS[P <% Ordered[P]](l:List[P]):List[P]
+
 }
 
