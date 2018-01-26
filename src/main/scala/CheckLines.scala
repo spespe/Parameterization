@@ -274,12 +274,11 @@ object CheckLines{
     case (_,_) => throw new IllegalArgumentException("The input passed it is not valid.")
   }
 
-
   //add method
   def add(a:Int, l1:List[Int], l2:List[Int]):List[Int] = (l1,l2) match {
-    case (List(),List()) =>
-    case (List(), _ :: _) =>
-    case (_ :: _, List()) =>
+    case (List(),List()) => take(a, List())
+    case (List(), _ :: _) => take(a,l2)
+    case (_ :: _, List()) => take(a,l1)
     case (p::ps,q::qs) => ((a+p+q)%2)::add((a+p+q)/2,ps,qs)
   }
 
