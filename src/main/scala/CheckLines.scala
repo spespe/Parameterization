@@ -416,7 +416,13 @@ object CheckLines{
   }
 
   //getBiggest
-  def getbiggest[P <% Ordered[P]](l:List[P]):(P,List[P])
+  def getBiggest[P <% Ordered[P]](l:List[P]):(P,List[P]) = l match {
+    case (ps::pl) => {
+      val (pd, ld) = getBiggest(pl)
+      if(pd>=ps)(pd, ps::ld)
+      else (ps, pd::ld)
+    }
+  }
 
 
 }
