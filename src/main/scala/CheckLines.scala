@@ -426,6 +426,8 @@ object CheckLines{
     }
   }
 
+  //sortB
+  def sortB[P <% Ordered[P]](l:List[P]):List[P] 
 
 }
 
