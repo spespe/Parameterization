@@ -428,6 +428,7 @@ object CheckLines{
 
   //sortB
   def sortB[P <% Ordered[P]](l:List[P]):List[P] = l match {
+    case Nil => Nil
     case _ => {
       val (ps,pl) = getBiggest(l)
       sortB(pl):::List(ps)
