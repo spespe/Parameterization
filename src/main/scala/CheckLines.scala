@@ -149,7 +149,7 @@ object CheckLines{
 
   def longestWord(fileName:String)={
     val word = Source.fromFile(fileName).getLines.flatMap(_.split(" ")).reduceLeft((a,b)=>if(a.length>b.length) a else b)
-    println(word+": LENGTH["+word.length+"]")
+    println("Longest word found: "+word+" [LENGTH => "+word.length+"]")
   }
 
   def maximumElement(xs:List[Int]):Int = xs.reduce((a,b)=>if(a>b) a else b)
@@ -414,6 +414,10 @@ object CheckLines{
       ls1 ++ tmp
     }
   }
+
+  //getBiggest
+  def getbiggest[P <% Ordered[P]](l:List[P]):(P,List[P])
+
 
 }
 
