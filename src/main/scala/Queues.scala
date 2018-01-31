@@ -49,6 +49,9 @@ object Queues {
       }
   }
 
+  //copy
+  def copy(o:Stream[Int], i:List[Int], iR:Stream[Int]):Stream[Int]
+
 
 
 }
