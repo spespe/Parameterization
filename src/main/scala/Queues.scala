@@ -50,7 +50,10 @@ object Queues {
   }
 
   //copy
-  def copy(o:Stream[Int], i:List[Int], iR:Stream[Int]):Stream[Int]
+  def copy(o:Stream[Int], i:List[Int], iR:Stream[Int]):Stream[Int] = i match {
+    case p::pt if o.isEmpty => Stream.cons(p,iR)
+    case p::pt => Stream.cons(o.head, copy(o.tail,i.tail,Stream.cons(p,iR)))
+  }
 
 
 
