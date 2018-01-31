@@ -41,7 +41,13 @@ object Queues {
   case class LQueue(o:Stream[Int], oL:Int, i:List[Int], iL:Int)
 
   //queueMake
-  def queueMake(o:Stream[Int], oL:Int, i:List[Int], iL:Int):LQueue
+  def queueMaker(o:Stream[Int], oL:Int, i:List[Int], iL:Int):LQueue = {
+    if(iL <= oL) LQueue(o,oL,i,iL)
+    else
+      {
+        //Implementation using third method
+      }
+  }
 
 
 
