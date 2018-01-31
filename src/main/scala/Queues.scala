@@ -38,5 +38,8 @@ object Queues {
     }
   }
 
+  case class LQueue(o:Stream[Int], oL:Int, i:List[Int], iL:Int)
+
+
 }
 
