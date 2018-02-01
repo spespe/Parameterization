@@ -40,11 +40,14 @@ object Queues {
 
   case class LQueue(o:Stream[Int], oL:Int, i:List[Int], iL:Int){
     //push
-    def pushing(p:Int) ={
+    def pushing(p:Int){
       val q = queueMaker(o,oL,p::i,iL+1)
       println(s"pushing: ${p} - ${q}")
       q
     }
+    //empty
+    def empty = i.isEmpty && o.isEmpty
+
   }
 
   //queueMake
