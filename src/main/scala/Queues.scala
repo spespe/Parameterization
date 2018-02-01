@@ -47,7 +47,12 @@ object Queues {
     }
     //empty
     def empty = i.isEmpty && o.isEmpty
-
+    //pop
+    def pop:(Int,LQueue)={
+      val s = (o.head, queueMaker(o.tail, oL-1, i, iL))
+      println(s"pop: ${s._1} and ${s._2}")
+      s
+    }
   }
 
   //queueMake
