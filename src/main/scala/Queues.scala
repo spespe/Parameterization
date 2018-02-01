@@ -45,7 +45,12 @@ object Queues {
     if(iL <= oL) LQueue(o,oL,i,iL)
     else
       {
-        //Implementation using third method
+        //Using copy method here
+        val iSize = 0
+        val oSize = oL + iL
+        val oStream = copy(o,i,Stream.empty)
+        val iList = List()
+        LQueue(oStream, oSize,iList, iSize)
       }
   }
 
