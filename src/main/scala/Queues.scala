@@ -38,7 +38,13 @@ object Queues {
     }
   }
 
-  case class LQueue(o:Stream[Int], oL:Int, i:List[Int], iL:Int)
+  case class LQueue(o:Stream[Int], oL:Int, i:List[Int], iL:Int){
+    //push
+    def pushing(p:Int): Unit ={
+      val q = queueMaker(o,oL,p::i,iL+1)
+      println(s"pushing: ${p} - ${q}")
+    }
+  }
 
   //queueMake
   def queueMaker(o:Stream[Int], oL:Int, i:List[Int], iL:Int):LQueue = {
